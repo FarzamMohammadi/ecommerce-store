@@ -1,11 +1,9 @@
-package com.farzammohammadi_imanetahri_comp303_assignment04.productservice;
+package com.farzammohammadi_imanetahri_comp303_assigment04.productservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
-@EnableEurekaClient
 public class ProductServiceApplication {
 
     public static void main(String[] args) {

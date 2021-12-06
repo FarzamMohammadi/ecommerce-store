@@ -3,8 +3,11 @@ package com.farzammohammadi_imanetahri_comp303_assignment04.reviewservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
+import javax.validation.Valid;
 import java.util.List;
 
 //@RestController
@@ -28,7 +31,7 @@ public class ReviewController {
             model.addAttribute("reviews", productReviews);
         }
 
-        return "reviews/productReviews";
+        return "productReviews";
     }
 
     @GetMapping("/addNewReview/{id}")
@@ -36,12 +39,21 @@ public class ReviewController {
         Review newReview = new Review();
         newReview.setProductId(productId);
         model.addAttribute("review", newReview);
-        return "reviews/add";
+        return "add";
     }
     @PostMapping("/addNewReview")
-    public String addNewReviewSubmit(@ModelAttribute Review review, Model model) {
+    public ModelAndView addNewReviewSubmit(@ModelAttribute @Valid Review review, BindingResult result, Model model) {
+        if(result.hasErrors()){
+            getErrorPage();
+        }
+
         addNewReview(review);
-        return "products/list";
+        String listAllURL = "http://localhost:8099/products/listAll";
+        return new ModelAndView("redirect:" + listAllURL);
+    }
+    @GetMapping()
+    private String getErrorPage() {
+        return "error";
     }
 
 
@@ -51,10 +63,11 @@ public class ReviewController {
     }
 
     @PutMapping("/updateProduct/{id}")
-    public String updateProduct(@PathVariable("id") Long productId){
+    public ModelAndView updateProduct(@PathVariable("id") Long productId){
         Review review = reviewService.getReviewById(productId);
         reviewService.updateReview(review);
-        return "products/list";
+        String listAllURL = "http://localhost:8099/products/listAll";
+        return new ModelAndView("redirect:" + listAllURL);
     }
 
     @PostMapping

@@ -1,6 +1,11 @@
 package com.farzammohammadi_imanetahri_comp303_assignment04.reviewservice;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table
@@ -16,9 +21,13 @@ public class Review {
             generator = "review_sequence"
     )
 
+//    Instead of using -> @GeneratedValue(strategy = GenerationType.AUTO) the code above retrieves appropriate ID number and is never blank
     private Long id;
+    @NotEmpty
+    @Size(max = 20, min = 3, message = "Enter your name.")
     private String reviewerName;
     private String comment;
+    @NotNull
     private Integer rating;
     private Long productId;
 

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<style>
+    #wrapper { width: 1000px; margin: 0 auto; }
+    * {
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        background: blanchedalmond;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .content {
+        background-color: #ddd;
+        padding: 10px;
+        height: 200px;
+    }
+
+    h1 {
+        font-family: sans-serif;
+        font-size: 1.5em;
+        text-transform: uppercase;
+        background-color: yellow;
+    }
+
+    strong {
+        font-weight: 700;
+        background-color: yellow;
+    }
+
+    p {
+        font-family: sans-serif;
+    }
+</style>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Product Reviews</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<div id="wrapper">
+<h1>Product Reviews</h1>
+<table>
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Product Reviewer</th>
+        <th></th>
+        <th>Comment</th>
+        <th>Rating (0-10)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="review : ${reviews}">
+        <td th:text="${reviewStat.index + 1}">#</td>
+        <td th:text="${review.reviewerName}">Product Name</td>
+        <td></td>
+        <td th:text="${review.comment}">Price</td>
+        <td th:text="${review.rating}">Quantity</td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+    <a href="http://localhost:8099/">Home</a>
+</div>
+</body>
+</html>

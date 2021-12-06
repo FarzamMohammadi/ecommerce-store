@@ -1,4 +1,4 @@
-package com.farzammohammadi_imanetahri_comp303_assignment04.productservice;
+package com.farzammohammadi_imanetahri_comp303_assigment04.productservice;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

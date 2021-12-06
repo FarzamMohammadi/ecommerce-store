@@ -1,4 +1,4 @@
-package com.farzammohammadi_imanetahri_comp303_assignment04.productservice;
+package com.farzammohammadi_imanetahri_comp303_assigment04.productservice;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

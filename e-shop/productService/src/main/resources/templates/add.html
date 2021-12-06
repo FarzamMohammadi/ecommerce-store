@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<style>
+    #wrapper { width: 1000px; margin: 0 auto; }
+    * {
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        background: blanchedalmond;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .content {
+        background-color: #ddd;
+        padding: 10px;
+        height: 200px;
+    }
+
+    h1 {
+        font-family: sans-serif;
+        font-size: 1.5em;
+        text-transform: uppercase;
+        background-color: yellow;
+    }
+
+    strong {
+        font-weight: 700;
+        background-color: yellow;
+    }
+
+    p {
+        font-family: sans-serif;
+    }
+</style>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Add new product</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" th:href="@{../../static/css/simplecss.css}"/>
+</head>
+<body>
+<div id="wrapper">
+<h1>Add new product</h1>
+<form action="#" th:action="@{/products/addNewProduct}" th:object="${product}" method="post">
+    <p>Item Name: <input type="text" th:field="*{name}" /></p>
+    <p>Item Price: <input type="text" th:field="*{price}" /></p>
+    <p>Item Qty: <input type="text" th:field="*{quantity}" /></p>
+    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+</form>
+    <a th:href="@{/}" href="#">Home</a>
+
+</div>
+</body>
+</html>

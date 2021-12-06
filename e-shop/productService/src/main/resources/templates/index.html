@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<style>
+    #wrapper { width: 1000px; margin: 0 auto; }
+    * {
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        background: blanchedalmond;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .content {
+        background-color: #ddd;
+        padding: 10px;
+        height: 200px;
+    }
+
+    h1 {
+        font-family: sans-serif;
+        font-size: 1.5em;
+        text-transform: uppercase;
+        background-color: yellow;
+    }
+
+    strong {
+        font-weight: 700;
+        background-color: yellow;
+    }
+
+    p {
+        font-family: sans-serif;
+    }
+</style>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Products Index</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/simplecss.css}"/>
+</head>
+<body>
+<div id="wrapper">
+<h1>Products</h1>
+<a th:href="@{products/listAll}" href="#">List of books</a>
+</div>
+</body>
+</html>

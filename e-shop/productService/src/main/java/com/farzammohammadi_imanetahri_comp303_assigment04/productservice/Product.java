@@ -1,5 +1,9 @@
-package com.farzammohammadi_imanetahri_comp303_assignment04.productservice;
+package com.farzammohammadi_imanetahri_comp303_assigment04.productservice;
+import com.sun.istack.NotNull;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table
@@ -16,8 +20,12 @@ public class Product {
     )
 
     private Long id;
+    @NotEmpty
+    @Size(max = 20, min = 3, message = "Enter Item Name.")
     private String name;
+    @NotNull
     private Double price;
+    @NotNull
     private Integer quantity;
 
     public Product(){}
