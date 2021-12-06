@@ -21,7 +21,7 @@ public class Product {
 
     private Long id;
     @NotEmpty
-    @Size(max = 20, min = 3, message = "Enter Item Name.")
+    @Size(max = 45, min = 3, message = "Enter Item Name.")
     private String name;
     @NotNull
     private Double price;

@@ -24,7 +24,7 @@ public class Review {
 //    Instead of using -> @GeneratedValue(strategy = GenerationType.AUTO) the code above retrieves appropriate ID number and is never blank
     private Long id;
     @NotEmpty
-    @Size(max = 20, min = 3, message = "Enter your name.")
+    @Size(max = 30, min = 3, message = "Enter your name.")
     private String reviewerName;
     private String comment;
     @NotNull
