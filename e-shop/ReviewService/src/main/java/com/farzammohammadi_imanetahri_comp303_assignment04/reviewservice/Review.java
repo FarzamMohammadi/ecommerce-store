@@ -3,7 +3,6 @@ package com.farzammohammadi_imanetahri_comp303_assignment04.reviewservice;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
